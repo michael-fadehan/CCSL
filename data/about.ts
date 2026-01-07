@@ -15,7 +15,7 @@ export const team = [
   {
     name: "Bldr. James Omotan (MNIOB, FIMC, CPMC)",
     role: "Chief Executive Officer (CEO)",
-    photo: "/images/team-1.jpg",
+    photo: "/images/James.jpg",
     bio: "Bldr. Omotan provides strategic leadership and overall direction for the company, bringing over a decade of experience in the construction industry. He leads the execution of ambitious projects with a clear vision, strong governance, and a commitment to delivering enduring value.",
   },
   {
@@ -27,13 +27,13 @@ export const team = [
   {
     name: "Ifeoluwa Oyeyipo (ACIB, FCAI)",
     role: "Finance Manager",
-    photo: "/images/team-3.jpg",
+    photo: "/images/Ifeoluwa.jpg",
     bio: "Ifeoluwa oversees the company’s financial planning, controls, and reporting functions. With 6 years of experience in banking and financial management, she ensures fiscal discipline, resource optimization, and financial sustainability across operations.",
   },
   {
     name: "Oluwadamilola Obadimeji, ESQ.",
     role: "Lead, Legal",
-    photo: "/images/team-4.jpg",
+    photo: "/images/Oluwadamilola.JPG",
     bio: "Barr. Obadimeji provides legal oversight across corporate governance, compliance, and contract management. With 13 years of legal practice, she supports risk management and ensures regulatory alignment across all engagements.",
   },
   {

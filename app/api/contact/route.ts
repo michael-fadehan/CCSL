@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 type ContactPayload = {
   name: string;
@@ -54,6 +55,39 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true });
     }
 
+    // If SMTP is configured (e.g., Zoho), send via SMTP using nodemailer
+    const smtpHost = process.env.SMTP_HOST;
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+    const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : undefined;
+    const smtpSecure = process.env.SMTP_SECURE === "true";
+    if (smtpHost && smtpUser && smtpPass) {
+      const transporter = nodemailer.createTransport({
+        host: smtpHost,
+        port: smtpPort || 587,
+        secure: smtpSecure, // true for 465, false for STARTTLS
+        auth: {
+          user: smtpUser,
+          pass: smtpPass,
+        },
+      });
+
+      const mailOptions = {
+        from: process.env.FROM_EMAIL || smtpUser,
+        to: process.env.TO_EMAIL || smtpUser,
+        replyTo: body.email,
+        subject: `New contact from ${body.name} (CCSL website)`,
+        text: `Name: ${body.name}\nEmail: ${body.email}\nPhone: ${body.phone || "-"}\nCompany: ${body.company || "-"}\nService: ${body.service || "-"}\n\nMessage:\n${body.message}`,
+      };
+
+      try {
+        await transporter.sendMail(mailOptions);
+        return NextResponse.json({ ok: true });
+      } catch (err) {
+        return NextResponse.json({ error: `SMTP error: ${String(err)}` }, { status: 502 });
+      }
+    }
+
     // If FORMSPREE_ENDPOINT is provided, forward the form to Formspree
     const formspreeEndpoint = process.env.FORMSPREE_ENDPOINT;
     if (formspreeEndpoint) {
@@ -63,6 +97,7 @@ export async function POST(request: Request) {
         body: JSON.stringify({
           name: body.name,
           email: body.email,
+          _replyto: body.email,
           phone: body.phone,
           company: body.company,
           service: body.service,

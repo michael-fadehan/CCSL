@@ -82,26 +82,26 @@ export const ContactForm: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <label className="flex flex-col">
           <span className="text-sm mb-1">Name *</span>
-          <input name="name" value={form.name} onChange={handleChange} placeholder="Name" aria-required className="p-3 border rounded text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1" />
+          <input name="name" value={form.name} onChange={handleChange} placeholder="Name" aria-required className="p-3 border rounded bg-white text-[--color-heading] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1" />
         </label>
         <label className="flex flex-col">
           <span className="text-sm mb-1">Email *</span>
-          <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="Email" aria-required className="p-3 border rounded text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1" />
+          <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="Email" aria-required className="p-3 border rounded bg-white text-[--color-heading] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1" />
         </label>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <label className="flex flex-col">
           <span className="text-sm mb-1">Phone</span>
-          <input name="phone" value={form.phone} onChange={handleChange} placeholder="Phone" className="p-3 border rounded text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1" />
+          <input name="phone" value={form.phone} onChange={handleChange} placeholder="Phone" className="p-3 border rounded bg-white text-[--color-heading] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1" />
         </label>
         <label className="flex flex-col">
           <span className="text-sm mb-1">Company</span>
-          <input name="company" value={form.company} onChange={handleChange} placeholder="Company" className="p-3 border rounded text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1" />
+          <input name="company" value={form.company} onChange={handleChange} placeholder="Company" className="p-3 border rounded bg-white text-[--color-heading] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1" />
         </label>
       </div>
       <label className="flex flex-col">
         <span className="text-sm mb-1">Service of interest</span>
-        <select name="service" value={form.service} onChange={handleChange} className="p-3 border rounded text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1">
+        <select name="service" value={form.service} onChange={handleChange} className="p-3 border rounded bg-white text-[--color-heading] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1">
           <option value="">Select a service</option>
           <option>Construction Management</option>
           <option>Project Management</option>
@@ -111,7 +111,7 @@ export const ContactForm: React.FC = () => {
       </label>
       <label className="flex flex-col">
         <span className="text-sm mb-1">Message *</span>
-        <textarea name="message" value={form.message} onChange={handleChange} placeholder="Message" aria-required className="p-3 border rounded min-h-[120px] text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1" />
+        <textarea name="message" value={form.message} onChange={handleChange} placeholder="Message" aria-required className="p-3 border rounded min-h-[120px] bg-white text-[--color-heading] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[--color-primary] focus:ring-offset-1" />
       </label>
       <label className="flex items-start gap-2 text-sm">
         <input name="consent" type="checkbox" checked={form.consent} onChange={handleChange} />

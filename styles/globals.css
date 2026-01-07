@@ -30,6 +30,11 @@ body {
   padding-right: 1rem;
 }
 
+/* Smooth scrolling for intra-page links */
+html {
+  scroll-behavior: smooth;
+}
+
 .section-heading {
   @apply text-2xl font-semibold text-[--color-heading] mb-6;
 }

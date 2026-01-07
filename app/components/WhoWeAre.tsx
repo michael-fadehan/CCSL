@@ -1,4 +1,5 @@
 import React from "react";
+import { stats } from "../../data/about";
 
 export const WhoWeAre: React.FC = () => {
   return (
@@ -13,19 +14,14 @@ export const WhoWeAre: React.FC = () => {
         </div>
 
         <aside className="space-y-4">
-          <div className="bg-white rounded-lg p-4 shadow flex items-center gap-4">
-            <div className="w-12 h-12 bg-[--color-primary] text-white rounded flex items-center justify-center">15+</div>
-            <div>
-              <div className="text-sm font-semibold">Years Combined Experience</div>
+          {stats.map((s) => (
+            <div key={s.label} className="bg-white rounded-lg p-4 shadow flex items-center gap-4">
+              <div className="w-12 h-12 bg-[--color-primary] text-white rounded flex items-center justify-center">{s.value}</div>
+              <div>
+                <div className="text-sm font-semibold">{s.label}</div>
+              </div>
             </div>
-          </div>
-          <div className="bg-white rounded-lg p-4 shadow">
-            <div className="text-sm font-semibold">Efficient & Quality-Driven</div>
-            <div className="text-xs text-gray-500">Execution driven</div>
-          </div>
-          <div className="bg-white rounded-lg p-4 shadow">
-            <div className="text-sm font-semibold">Trusted by Developers & Organizations</div>
-          </div>
+          ))}
         </aside>
       </div>
     </section>

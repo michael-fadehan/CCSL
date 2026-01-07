@@ -3,7 +3,6 @@ import { AboutHero } from "../components/AboutHero";
 import { AboutStats } from "../components/AboutStats";
 import { Timeline } from "../components/Timeline";
 import { TeamGrid } from "../components/TeamGrid";
-import { Certifications } from "../components/Certifications";
 import { AboutCta } from "../components/AboutCta";
 
 export default function AboutPage() {
@@ -31,7 +30,6 @@ export default function AboutPage() {
 
       <Timeline />
       <TeamGrid />
-      <Certifications />
       <AboutCta />
     </>
   );

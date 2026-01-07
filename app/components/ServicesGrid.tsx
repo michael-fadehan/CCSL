@@ -7,6 +7,7 @@ const services = [
   { title: "Consultancy", blurb: "Advisory services for feasibility, planning, and execution." },
   { title: "Building Services & Facility Management", blurb: "Operational support for completed assets." },
   { title: "Conservatory Facility Management", blurb: "Operational support for completed assets." },
+  { title: "Building Materials", blurb: "We help procure high-quality building materials and manage supply chain logistics." },
 ];
 
 export const ServicesGrid: React.FC = () => {
